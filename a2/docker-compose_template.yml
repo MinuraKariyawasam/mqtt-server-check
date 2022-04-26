@@ -5,7 +5,7 @@ services:
     image: docker-registry.rahti.csc.fi/student474/toyota-data:1.0
     environment:
       - MQTT_URL=mqtt-test.rahtiapp.fi
-      - MQTT_PORT=443
+      - MQTT_PORT=8883
       - CLIENT_ID=student474
     networks:
       - student474-net
@@ -18,6 +18,7 @@ services:
      - "./ca.crt:/mosquitto/certs/ca.crt"
      - "./server.crt:/mosquitto/certs/server.crt"
      - "./server.key:/mosquitto/certs/server.key"
+    command: mosquitto_sub -h mqtt-test.rahtiapp.fi -p 8883 -t 'student474/toyota/SPEED' --verbose --insecure and --cafile ca.crt
     networks:
       - student474-net
 networks:
