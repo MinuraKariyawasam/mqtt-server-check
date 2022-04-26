@@ -18,7 +18,7 @@ services:
      - "./ca.crt:/mosquitto/certs/ca.crt"
      - "./server.crt:/mosquitto/certs/server.crt"
      - "./server.key:/mosquitto/certs/server.key"
-    command: mosquitto_sub -h mqtt-test.rahtiapp.fi -p 8883 -t 'student474/toyota/SPEED' --verbose --insecure and --cafile /mosquitto/certs/ca.crt
+    command: mosquitto_sub -h mqtt-test.rahtiapp.fi -p 8883 -t 'student474/toyota/SPEED' --verbose --insecure --cafile /mosquitto/certs/ca.crt
     networks:
       - student474-net
 networks:
