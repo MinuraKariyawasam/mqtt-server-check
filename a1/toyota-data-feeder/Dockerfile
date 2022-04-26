@@ -18,6 +18,8 @@ ENV CLIENT_IDL=$foo
 
 CMD [ "python", "feeder.py" ]
 
+EXPOSE 443
+
 # COMMANDS TO RUN
 # 1) docker build -t toyota-data .
 # 2) docker run -e MQTT_URL=mqtt-test.rahtiapp.fi -e MQTT_PORT=443 -e CLIENT_ID=student474 toyota-data
