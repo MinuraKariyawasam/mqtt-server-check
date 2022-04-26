@@ -21,8 +21,6 @@ CMD [ "python", "feeder.py" ]
 # COMMANDS TO RUN
 # 1) docker build -t toyota-data .
 # 2) docker run -e MQTT_URL=mqtt-test.rahtiapp.fi -e MQTT_PORT=443 -e CLIENT_ID=student474 toyota-data
-# 3) docker image tag toyota-data yourusername/toyota-data:1.0
-# 4) docker image push yourusername/toyota-data:1.0
-
-
-
+# 3) # sudo docker tag toyota-data docker-registry.rahti.csc.fi/student474/toyota-data:1.0
+     # sudo docker push docker-registry.rahti.csc.fi/student474/toyota-data:1.0
+# mosquitto_sub -h mqtt-test.rahtiapp.fi -p 443 -t 'student474/toyota/SPEED' --verbose --insecure and --cafile ca.crt
