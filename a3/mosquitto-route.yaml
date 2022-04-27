@@ -7,7 +7,6 @@ spec:
   port:
     targetPort: 1883
   tls:
-    insecureEdgeTerminationPolicy: Allow
     termination: passthrough
   to:
     kind: Service
