@@ -25,7 +25,6 @@ spec:
             - name: mosquitto-secret
               mountPath: /mosquitto/config/certs
               readOnly: true
-          command: ["mosquitto_sub -h mqtt.student474.rahtiapp.fi -p 443 -t 'student474/toyota/SPEED' --verbose --insecure --cafile /mosquitto/config/certs/ca.crt"]
       volumes:
         - name: mosquitto-conf
           configMap:
