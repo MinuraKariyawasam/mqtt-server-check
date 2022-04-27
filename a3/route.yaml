@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: Route
+metadata:
+  name: mosquitto-route
+spec:
+  host: mqtt.student474.rahtiapp.fi
+  to:
+    kind: Service
+    name: mosquitto-service
