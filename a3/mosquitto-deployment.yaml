@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mosquitto
+  labels:
+    app: mosquitto
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mosquitto
+  template:
+    metadata:
+      labels:
+        app: mosquitto
+    spec:
+      containers:
+        - name: mosquitto
+          image: eclipse-mosquitto:latest
+          ports:
+            - containerPort: 1883
+          volumeMounts:
+            - name: mosquitto-conf
+              mountPath: /mosquitto/config
+            - name: mosquitto-secret-ca
+              mountPath: /mosquitto/config/certs
+              readOnly: true
+            - name: mosquitto-secret-server-cert
+              mountPath: /mosquitto/config/certs
+              readOnly: true
+            - name: mosquitto-secret-sever-key
+              mountPath: /mosquitto/config/certs
+              readOnly: true
+      volumes:
+        - name: mosquitto-conf
+          configMap:
+            name: mosquitto-configmap
+        - name: mosquitto-secret-ca
+          secret:
+            secretName: mosquitto-secret-ca-file
+        - name: mosquitto-secret-server-cert
+          secret:
+            secretName: mosquitto-secret-server-file
+        - name: mosquitto-secret-sever-key
+          secret:
+            secretName: mosquitto-secret-server-key-file

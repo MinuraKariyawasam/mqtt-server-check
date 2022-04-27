@@ -5,8 +5,6 @@ data:
     allow_anonymous true
 kind: ConfigMap
 metadata:
-  creationTimestamp: "2022-04-27T06:10:38Z"
   name: mosquitto-configmap
-  namespace: default
-  resourceVersion: "7486"
-  uid: 980fcf0b-95f2-4838-bbca-a1f5f2e3bee6
+  labels:
+    app: mosquitto
