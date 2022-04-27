@@ -22,13 +22,7 @@ spec:
           volumeMounts:
             - name: mosquitto-conf
               mountPath: /mosquitto/config
-            - name: mosquitto-secret-ca
-              mountPath: /mosquitto/config/certs
-              readOnly: true
-            - name: mosquitto-secret-server-cert
-              mountPath: /mosquitto/config/certs
-              readOnly: true
-            - name: mosquitto-secret-sever-key
+            - name: mosquitto-secret
               mountPath: /mosquitto/config/certs
               readOnly: true
           command: ["mosquitto_sub -h mqtt.student474.rahtiapp.fi -p 443 -t 'student474/toyota/SPEED' --verbose --insecure --cafile /mosquitto/certs/ca.crt"]
@@ -36,12 +30,6 @@ spec:
         - name: mosquitto-conf
           configMap:
             name: mosquitto-configmap
-        - name: mosquitto-secret-ca
+        - name: mosquitto-secret
           secret:
-            secretName: mosquitto-secret-ca-file
-        - name: mosquitto-secret-server-cert
-          secret:
-            secretName: mosquitto-secret-server-file
-        - name: mosquitto-secret-sever-key
-          secret:
-            secretName: mosquitto-secret-server-key-file
+            secretName: mosquitto-secret-file
