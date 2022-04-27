@@ -4,6 +4,12 @@ metadata:
   name: mosquitto-route
 spec:
   host: mqtt.student474.rahtiapp.fi
+  port:
+    targetPort: 1883
+  tls:
+    insecureEdgeTerminationPolicy: Allow
+    termination: passthrough
   to:
     kind: Service
     name: mosquitto-service
+    weight: 100
