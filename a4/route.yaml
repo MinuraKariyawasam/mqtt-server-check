@@ -6,8 +6,6 @@ spec:
   host: nodered.student474.rahtiapp.fi
   port:
     targetPort: 1880
-  tls:
-    termination: passthrough
   to:
     kind: Service
     name: rode-red-service

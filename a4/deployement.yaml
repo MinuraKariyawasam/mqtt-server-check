@@ -23,11 +23,6 @@ spec:
         volumeMounts:
         - name: node-red-data
           mountPath: /data
-        env:
-        - name: NODE_NAME
-          valueFrom:
-            fieldRef:
-              fieldPath: spec.nodeName
       volumes:
       - name: node-red-data
         persistentVolumeClaim:
