@@ -16,7 +16,6 @@ metadata:
     app: grafana
   name: grafana
 spec:
-  replicas: 1
   selector:
     matchLabels:
       app: grafana
