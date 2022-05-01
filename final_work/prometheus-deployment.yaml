@@ -12,36 +12,6 @@ spec:
       storage: 1Gi
 
 ---
-apiVersion: rbac.authorization.k8s.io/v1
-kind: Role
-metadata:
-  name: prometheus
-  rules:
-  - apiGroups:
-    - ""
-    resources:
-    - services
-    - endpoints
-    - pods
-    verbs:
-    - list
-    - get
-    - watch
----
-apiVersion: rbac.authorization.k8s.io/v1
-kind: RoleBinding
-metadata:
-  name: prometheus
-roleRef:
-  apiGroup: rbac.authorization.k8s.io
-  kind: Role
-  name: prometheus
-subjects:
-- kind: ServiceAccount
-  name: default
-  namespace: student474
-
----
 apiVersion: v1
 kind: ConfigMap
 metadata:
