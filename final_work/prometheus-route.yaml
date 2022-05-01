@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Route
+metadata:
+  name: rode-red-route
+spec:
+  host: promethues.student474.rahtiapp.fi
+  port:
+    targetPort: web
+  to:
+    kind: Service
+    name: prometheus-service
+    weight: 100

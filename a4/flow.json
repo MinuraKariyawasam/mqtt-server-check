@@ -79,7 +79,7 @@
         "rules": [
             {
                 "t": "eq",
-                "v": "student474/toyota/SPEED",
+                "v": "student474/#",
                 "vt": "str"
             }
         ],
