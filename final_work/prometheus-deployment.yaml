@@ -43,7 +43,7 @@ roleRef:
   name: prometheus
 subjects:
 - kind: ServiceAccount
-  name: default
+  name: system:serviceaccounts:student474
   namespace: student474
 
 ---
