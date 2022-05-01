@@ -1,12 +1,3 @@
-objects:
-- apiVersion: v1
-  kind: ServiceAccount
-  metadata:
-    name: prom
-    annotations:
-      serviceaccounts.openshift.io/oauth-redirectreference.prom: '{"kind":"OAuthRedirectReference","apiVersion":"v1","reference":{"kind":"Route","name":"prom"}}'
-      serviceaccounts.openshift.io/oauth-redirectreference.alerts: '{"kind":"OAuthRedirectReference","apiVersion":"v1","reference":{"kind":"Route","name":"prom-alerts"}}'
----
 apiVersion: template.openshift.io/v1
 kind: Template
 metadata:
@@ -47,5 +38,5 @@ objects:
     name: prometheus-sd
   subjects:
   - kind: ServiceAccount
-    name: prom
+    name: default
     namespace: ${PROMETHEUS_PROJECT}
