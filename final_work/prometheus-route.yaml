@@ -5,7 +5,7 @@ metadata:
 spec:
   host: promethues.student474.rahtiapp.fi
   port:
-    targetPort: web
+    targetPort: prometheus
   to:
     kind: Service
     name: prometheus-service

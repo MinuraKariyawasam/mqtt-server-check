@@ -13,4 +13,6 @@ spec:
     type: LoadBalancer
     ports:
     - port: 8080
+      name: prometheus
+      protocol: TCP
       targetPort: web 
