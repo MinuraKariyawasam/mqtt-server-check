@@ -43,7 +43,8 @@ roleRef:
   name: prometheus
 subjects:
 - kind: ServiceAccount
-  name: student474
+  name: default
+  namespace: student474
 
 ---
 apiVersion: v1
@@ -212,7 +213,7 @@ spec:
     spec:
       containers:
       - name: prometheus
-        image: prom/prometheus
+        image: prom/prometheus:v2.27.1
         args:
           - '--storage.tsdb.retention=6h'
           - '--storage.tsdb.path=/prometheus'
