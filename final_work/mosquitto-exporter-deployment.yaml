@@ -19,7 +19,7 @@ spec:
         image: sapcc/mosquitto-exporter
         env:
         - name: BROKER_ENDPOINT
-          value: mosquitto-service.student474.svc
+          value: mosquitto-service.student474.svc:1883
         ports:
         - containerPort: 9234
           name: exporterport
