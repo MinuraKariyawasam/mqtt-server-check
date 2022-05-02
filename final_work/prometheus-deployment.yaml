@@ -39,13 +39,13 @@ data:
           static_configs:
             - targets: ['mosquitto-exporter-service.student474.svc:9234']
         
-        - job_name: node-exporter-scrape
-          scrape_interval: 30s
-          scrape_timeout: 10s
-          metrics_path: /metrics
-          scheme: http
-          static_configs:
-            - targets: ['node-exporter.student474.svc:9100']
+        - job_name: 'node-exporter'
+        kubernetes_sd_configs:
+          - role: endpoints
+        relabel_configs:
+        - source_labels: [__meta_kubernetes_endpoints_name]
+          regex: 'node-exporter'
+          action: keep
 ---
 apiVersion: apps/v1
 kind: Deployment
