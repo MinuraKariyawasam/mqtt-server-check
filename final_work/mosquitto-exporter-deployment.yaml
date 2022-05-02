@@ -22,4 +22,4 @@ spec:
           value: mosquitto-service.student474.svc
         ports:
         - containerPort: 9234
-          name: mosquittoexporterport
+          name: exporterport

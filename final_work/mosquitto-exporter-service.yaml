@@ -9,6 +9,6 @@ spec:
     type: LoadBalancer
     ports:
     - port: 9234
-      name: mosquittoexporterport
+      name: exporterport
       protocol: TCP
-      targetPort: mosquittoexporterport 
+      targetPort: exporterport
