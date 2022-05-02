@@ -39,7 +39,7 @@ data:
           static_configs:
             - targets: ['mosquitto-exporter-service.student474.svc:9234']
         
-        - job_name: 'node-exporter'
+        - job_name: node-exporter
           kubernetes_sd_configs:
             - role: endpoints
           relabel_configs:
