@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Deployment
+metadata:
+  name: mosquitto-exporter
+  labels:
+    app: mosquitto-exporter
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mosquitto-exporter
+  template:
+    metadata:
+      labels:
+        app: mosquitto-exporter
+    spec:
+      containers:
+      - name: mosquitto-exporter
+        image: sapcc/mosquitto-exporter
+        env:
+        - name: BROKER_ENDPOINT
+          value: mosquitto-service.student474.svc
+        ports:
+        - containerPort: 9234
+          name: mosquittoexporterport
