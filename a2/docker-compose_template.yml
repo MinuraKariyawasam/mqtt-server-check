@@ -7,15 +7,21 @@ services:
       - MQTT_URL=localhost
       - MQTT_PORT=8883
       - CLIENT_ID=student474
-    network_mode: "host"
+    networks:
+      - default
   mosquitto:
     image: eclipse-mosquitto:latest
     ports:
      - "1883:8883"
-    network_mode: "host"
     volumes:
      - "./mosquitto.conf:/mosquitto/config/mosquitto.conf"
      - "./ca.crt:/mosquitto/certs/ca.crt"
      - "./server.crt:/mosquitto/certs/server.crt"
      - "./server.key:/mosquitto/certs/server.key"
+    networks:
+      - default
+
+networks:
+  default:
+    driver: host
 
