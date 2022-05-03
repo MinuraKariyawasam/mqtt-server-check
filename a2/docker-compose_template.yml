@@ -23,5 +23,5 @@ services:
 
 networks:
   student474-net:
-    external: true
+    driver: host
 
