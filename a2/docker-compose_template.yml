@@ -1,4 +1,4 @@
-version: "3.9"
+version: "3.3"
 
 services:
   feeder:
@@ -20,6 +20,7 @@ services:
      - "./server.key:/mosquitto/certs/server.key"
     networks:
       - student474-net
+
 networks:
   student474-net:
 
