@@ -5,7 +5,7 @@ services:
     image: docker-registry.rahti.csc.fi/student474/toyota-data:1.0
     environment:
       - MQTT_URL=mosquitto
-      - MQTT_PORT=8883
+      - MQTT_PORT=1883
       - CLIENT_ID=student474
     networks:
       - student474-net
