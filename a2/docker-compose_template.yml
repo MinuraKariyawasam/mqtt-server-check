@@ -23,4 +23,6 @@ services:
 
 networks:
   student474-net:
+      external: true
+      name: host
 
