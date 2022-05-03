@@ -19,6 +19,3 @@ services:
      - "./server.crt:/mosquitto/certs/server.crt"
      - "./server.key:/mosquitto/certs/server.key"
 
-
-networks:
-
