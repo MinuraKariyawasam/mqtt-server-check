@@ -12,7 +12,7 @@ services:
   mosquitto:
     image: eclipse-mosquitto:latest
     ports:
-      - "8883:1883"
+      - "8883:8883"
     volumes:
      - "./mosquitto.conf:/mosquitto/config/mosquitto.conf"
      - "./ca.crt:/mosquitto/certs/ca.crt"
