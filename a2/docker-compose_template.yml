@@ -6,7 +6,7 @@ services:
     environment:
       - MQTT_URL=localhost
       - MQTT_PORT=8883
-      - CLIENT_ID=foo
+      - CLIENT_ID=student474
     networks:
       - student474-net
   mosquitto:
