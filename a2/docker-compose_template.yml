@@ -22,7 +22,7 @@ services:
       - host
 
 networks:
-  host:
-    name: host
-    external: true
+  default:
+    external:
+      name: host
 
