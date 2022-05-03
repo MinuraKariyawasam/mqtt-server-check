@@ -23,5 +23,5 @@ services:
 
 networks:
   default:
-    driver: host
+    driver: localhost
 
