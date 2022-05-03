@@ -22,7 +22,7 @@ services:
       - student474-net
 
 networks:
-  student474-net:
+  default:
     external: true
     name: student474-net
 
