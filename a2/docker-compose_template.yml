@@ -4,7 +4,7 @@ services:
   feeder:
     image: docker-registry.rahti.csc.fi/student474/toyota-data:1.0
     environment:
-      - MQTT_URL=localhost
+      - MQTT_URL=student474-net
       - MQTT_PORT=8883
       - CLIENT_ID=student474
     networks:
