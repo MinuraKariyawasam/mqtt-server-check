@@ -1,4 +1,4 @@
-version: "3.3"
+version: "3.4"
 
 services:
   feeder:
@@ -23,6 +23,6 @@ services:
 
 networks:
   student474-net:
-      external: true
-      name: host
+    external: true
+    name: host
 
