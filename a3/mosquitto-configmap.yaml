@@ -8,7 +8,6 @@ data:
     keyfile /mosquitto/config/certs/server.key
     tls_version tlsv1.3
 
-    
     listener 1883
 
 kind: ConfigMap
