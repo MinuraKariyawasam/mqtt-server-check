@@ -5,8 +5,7 @@ metadata:
 spec:
   host: mqtt.student474.rahtiapp.fi
   port:
-    - targetPort: 1883
-    - targetPort: 8883
+    targetPort: 8883
   tls:
     termination: passthrough
   to:
