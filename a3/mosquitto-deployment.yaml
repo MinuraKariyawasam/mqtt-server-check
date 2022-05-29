@@ -18,20 +18,17 @@ spec:
         - name: mosquitto
           image: eclipse-mosquitto:latest
           ports:
-            - containerPort: 1883
-              name: mosquittoport1
-            - containerPort: 8883
-              name: mosquittoport2
+            - containerPort: 1883   
+            - containerPort: 8883               
           volumeMounts:
-            - name: mosquitto-conf
-              mountPath: /mosquitto/config
-            - name: mosquitto-conf-cert
+            - name: certs
               mountPath: /mosquitto/config/certs
-              readOnly: true
+            - name: mosquitto-config
+              mountPath: /mosquitto/config/
       volumes:
-        - name: mosquitto-conf
+        - name: certs
           configMap:
-            name: mosquitto-configmap
-        - name: mosquitto-conf-cert
+            name: certs
+        - name: mosquitto-config
           configMap:
-            name: mosquitto-cert-configmap
+            name: mosquitto-config

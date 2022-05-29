@@ -9,6 +9,6 @@ spec:
   tls:
     termination: passthrough
   to:
-    kind: Service
+    kind: Service   
     name: mosquitto-service
     weight: 100
