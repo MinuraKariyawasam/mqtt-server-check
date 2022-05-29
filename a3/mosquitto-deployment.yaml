@@ -23,12 +23,12 @@ spec:
           volumeMounts:
             - name: certs
               mountPath: /mosquitto/config/certs
-            - name: mosquitto-config
+            - name: mosquitto-configmap
               mountPath: /mosquitto/config/
       volumes:
         - name: certs
           configMap:
             name: certs
-        - name: mosquitto-config
+        - name: mosquitto-configmap
           configMap:
-            name: mosquitto-config
+            name: mosquitto-configmap
